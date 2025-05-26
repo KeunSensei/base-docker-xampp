@@ -17,7 +17,9 @@ Voorbeeld Windows: `C:/Windows/Users/Test/Sites/:/var/www/html`<br />
 
 - stap 4
 Start Docker Desktop<br />
-Run in je terminal `docker composer --build -d`<br />
+Login met je Github account en vul alles in<br />
+Run in je terminal: `docker composer build`<br />
+Dan: `docker composer up -d`<br />
 
 - stap 5
 Ga daarna `http://localhost/` om te kijken of je een witte pagina krijgt<br />
