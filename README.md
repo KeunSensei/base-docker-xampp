@@ -14,11 +14,11 @@ Alles voor de `:/var/www/html` moet je veranderen naar je eigen map locatie<br /
 Regel 28: `volumes:`<br />
 Alles voor de `:/var/www/html` moet je veranderen naar je eigen map locatie<br />
 Voorbeeld Windows: `C:/Windows/Users/Test/Sites/:/var/www/html`<br />
-<br />
+
 - stap 4
 Start Docker Desktop<br />
 Run in je terminal `docker composer --build -d`<br />
-<br />
+
 - stap 5
 Ga daarna `http://localhost/` om te kijken of je een witte pagina krijgt<br />
 
