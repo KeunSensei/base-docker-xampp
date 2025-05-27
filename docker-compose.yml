@@ -2,23 +2,34 @@ networks:
   dev:
 
 services:
-  apache:
-    build:
-      context: ./apache
-      dockerfile: apache.dockerfile
-    hostname: 'apache.container'
-    container_name: 'apache'
-    volumes: 
+  # apache:
+  #   build:
+  #     context: ./apache
+  #     dockerfile: apache.dockerfile
+  #   hostname: 'apache.container'
+  #   container_name: 'apache'
+  #   volumes: 
+  #     - /Users/kborghols/Sites/localhost:/var/www/html/
+  #   environment: 
+  #     - PROJECT_DIR=/var/www/html
+  #   ports: 
+  #     - 80:80
+  #   depends_on:
+  #     - php_fpm
+  #   networks:
+  #     - dev
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    # ports:
+    #   - 8080:80
+    volumes:
       - /Users/kborghols/Sites/localhost:/var/www/html/
-    environment: 
-      - PROJECT_DIR=/var/www/html
-    ports: 
-      - 80:80
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - php_fpm
     networks:
       - dev
-
   php_fpm:
     build:
       context: ./php-fpm
